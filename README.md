@@ -1,6 +1,6 @@
 # HoopHub
 
-<img src="./showcase/src/assets/logo_header_barre.png" width=100%>
+<img src="./showcase/src/assets/Logos/logo_header_barre.png" width=100%>
 
 ## Sommaire
 - [Description du projet](#description-du-projet)
