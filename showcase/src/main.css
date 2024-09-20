@@ -1,0 +1,93 @@
+:root {
+    --hoophub-background: #F2F2F2;
+    --hoophub-primary: #E69138;
+    --hoophub-white: #ffffff;
+    --hoophub-black: #000000;
+}
+
+body {
+    font-family: 'Roboto Slab';
+    margin: 0;
+    padding: 0;
+    background: var(--hoophub-background);
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    transition: background 300ms ease-in-out;
+}
+
+.button-primary {
+    background: var(--hoophub-primary);
+    color: var(--hoophub-black);
+    border: 1px solid var(--hoophub-primary);
+}
+
+.button-primary:hover {
+    background: var(--hoophub-white);
+    border: 1px solid var(--hoophub-black);
+}
+
+.button-secondary {
+    background: var(--hoophub-white);
+    color: var(--hoophub-black);
+    border: 1px solid var(--hoophub-black);
+}
+
+.button-secondary:hover {
+    background: var(--hoophub-black);
+    color: var(--hoophub-white);
+}
+
+.button-tertiary {
+    background: var(--hoophub-black);
+    color: var(--hoophub-white);
+    border: 1px solid var(--hoophub-black);
+    font-weight: lighter;
+    box-shadow: none;
+}
+
+.button-tertiary:hover {
+    background: var(--hoophub-white);
+    color: var(--hoophub-black);
+}
+
+.button-quaternary {
+    background: transparent;
+    color: var(--hoophub-white);
+    border: 1px solid var(--hoophub-white);
+    font-weight: lighter;
+    box-shadow: none;
+    transition: color 300ms ease-in-out;
+}
+
+.button-quaternary:hover {
+    color: var(--hoophub-black);
+    border: 1px solid var(--hoophub-black);
+}
+
+a {
+    text-decoration: none;
+    color: var(--hoophub-black);
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position du trait sous le texte */
+    width: 0;
+    height: 2px; /* Épaisseur du soulignement */
+    background-color: var(--hoophub-black); /* Couleur du soulignement */
+    transition: width 300ms ease-in-out; /* Animation du trait */
+}
+
+a:hover::after {
+    width: 100%; /* Le trait occupe toute la largeur du lien */
+}
