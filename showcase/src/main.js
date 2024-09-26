@@ -21,7 +21,7 @@ translations.forEach(row => {
 
 // Configurer Vue I18n
 const i18n = createI18n({
-  locale: 'en', // Langue par défaut
+  locale: 'fr', // Langue par défaut
   messages,     // Les traductions depuis le CSV
 });
 
