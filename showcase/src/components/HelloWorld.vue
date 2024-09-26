@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ $t('greeting') }}</p> <!-- Affiche la traduction du tag 'greeting' -->
+    <p>{{ $t('home') }}</p> <!-- Affiche la traduction du tag 'greeting' -->
   </div>
   <img alt="Vue logo" src="../assets/logo.png">
   <div class="hello">
