@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <p>{{ $t('greeting') }}</p> <!-- Affiche la traduction du tag 'greeting' -->
+  </div>
   <img alt="Vue logo" src="../assets/logo.png">
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -29,6 +32,7 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
+  
 </template>
 
 <script>
