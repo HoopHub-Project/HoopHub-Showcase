@@ -20,7 +20,7 @@
 
       <div class="link-section">
         <h2 style="text-align: left; text-decoration: underline;">Liens</h2>
-        <a href="#">Lire la suite <span style="font-weight: bold;">></span></a>
+        <a href="#">{{ $t('read_more') }} <span style="font-weight: bold;">></span></a>
       </div>
 
       <!-- Section pour les boutons -->
@@ -37,10 +37,10 @@
           </thead>
           <tbody>
             <tr>
-              <td><button class="button-primary">Connexion</button></td>
-              <td><button class="button-secondary">Voir tout</button></td>
-              <td><button class="button-tertiary">Découvrir</button></td>
-              <td><button class="button-quaternary">Télécharger l'application</button></td>
+              <td><button class="button-primary">{{ $t('login') }}</button></td>
+              <td><button class="button-secondary">{{ $t('view_all') }}</button></td>
+              <td><button class="button-tertiary">{{ $t('discover') }}</button></td>
+              <td><button class="button-quaternary">{{ $t('download_app') }}</button></td>
             </tr>
             <tr>
               <td>.button-primary</td>
@@ -57,7 +57,7 @@
 
 <script>
 export default {
-  name: 'AssetsComponent',
+  name: 'AssetsVue',
 }
 </script>
 

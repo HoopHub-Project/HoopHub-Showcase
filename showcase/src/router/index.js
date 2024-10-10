@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
-import AssetsComponent from '@/components/AssetsComponent.vue'
+import HomeVue from '@/vue/HomeVue.vue'
+import AssetsVue from '@/vue/AssetsVue.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HelloWorld
+    component: HomeVue
   },
   {
     path: '/assets',
     name: 'AssetsComponent',
-    component: AssetsComponent
+    component: AssetsVue
   },
 ]
 
