@@ -1,10 +1,14 @@
 <template>
     <div class="tagline-container">
-        <div class="tagline-opacity">
-        </div>
+        <div class="tagline-opacity"></div>
         <div class="tagline-content">
-            <h1 class="tagline-title">{{ $t('hoophub') }} - {{ $t('slogan') }}</h1>
-            <p class="tagline-text">{{ $t('sub_slogan') }}</p>
+            <!-- Titre avec la classe "animate-on-load" pour déclencher l'animation -->
+            <h1 class="tagline-title animate-on-load">{{ $t('hoophub') }} - {{ $t('slogan') }}</h1>
+
+            <!-- Sous-titre avec la même classe pour l'animation -->
+            <p class="tagline-text animate-on-load">{{ $t('sub_slogan') }}</p>
+            
+            <!-- Boutons (sans transition spéciale) -->
             <div class="tagline-buttons">
                 <button class="button-tertiary">{{ $t('discover') }}</button>
                 <button class="button-quaternary dowload_app_btn">{{ $t('download_app') }}</button>
@@ -14,14 +18,20 @@
 </template>
 
 <script>
-
 export default {
-    name: 'TaglineVUe'
+    name: 'TaglineVue',
+    mounted() {
+        // Ajoute la classe "visible" pour démarrer la transition après le montage du composant
+        setTimeout(() => {
+            document.querySelectorAll('.animate-on-load').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 100); // Légère attente pour garantir que les éléments sont chargés
+    }
 }
 </script>
 
 <style scoped>
-
 .tagline-container {
     display: flex;
     flex-direction: column;
@@ -32,6 +42,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
+    position: relative;
 }
 
 .tagline-opacity {
@@ -54,6 +65,7 @@ export default {
     text-align: center;
     width: 760px;
     z-index: 1;
+    color: var(--hoophub-white);
 }
 
 .tagline-title {
@@ -68,6 +80,19 @@ export default {
     font-size: 1.125rem;
     line-height: 68px;
     color: var(--hoophub-white);
+}
+
+/* Classes pour les transitions d'apparition */
+.tagline-title, .tagline-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animation qui rend les éléments visibles */
+.animate-on-load.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tagline-buttons {
@@ -94,16 +119,15 @@ export default {
     }
 
     .tagline-title {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 68px;
-    color: var(--hoophub-white);
-}
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 68px;
+        color: var(--hoophub-white);
+    }
 
     .tagline-text {
         font-size: 16px;
         line-height: 24px;
     }
 }
-
 </style>
