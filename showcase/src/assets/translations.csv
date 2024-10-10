@@ -1,10 +1,12 @@
 tag;fr;en
 home;Accueil;Home
-app;Application;App
+app;Application;Application
 services;Nos services;Services
 news;Actualité;News
 login;Connexion;Log In
 hoophub;HoopHub;HoopHub
+menu;Menu;Menu
+switch_language;Changer la langue en; Switch language to
 slogan;Votre terrain de jeu, toujours é portée de main.;Your playground, always within reach.
 sub_slogan;Trouvez des joueurs, créez des équipes et planifiez des matchs de basket avec HoopHub.;Find players, create teams, and schedule basketball games with HoopHub.
 discover;Découvrir;Discover
