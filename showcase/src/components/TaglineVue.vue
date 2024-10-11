@@ -7,7 +7,7 @@
 
             <!-- Sous-titre avec la même classe pour l'animation -->
             <p class="tagline-text animate-on-load">{{ $t('sub_slogan') }}</p>
-            
+
             <!-- Boutons (sans transition spéciale) -->
             <div class="tagline-buttons">
                 <button class="button-tertiary">{{ $t('discover') }}</button>
@@ -16,7 +16,8 @@
 
         </div>
         <div class="tagline-image-container">
-            <img src="../assets/CoachCarter/Coach_Carter_Playground_Sans_Fond_inverted.png" alt="HoopHub Logo" :title="$t('hoophub')" />
+            <img src="../assets/CoachCarter/Coach_Carter_Playground_Sans_Fond_inverted.png" alt="HoopHub Logo"
+                :title="$t('hoophub')" />
         </div>
     </div>
 </template>
@@ -87,7 +88,8 @@ export default {
 }
 
 /* Classes pour les transitions d'apparition */
-.tagline-title, .tagline-text {
+.tagline-title,
+.tagline-text {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -105,7 +107,7 @@ export default {
 }
 
 .dowload_app_btn {
-    width: 221px;
+    width: fit-content;
 }
 
 .button-tertiary:hover {
@@ -145,5 +147,16 @@ export default {
         font-size: 16px;
         line-height: 24px;
     }
+
+    .tagline-image-container {
+        margin-left: 10px;
+    }
+
+    .tagline-image-container img {
+        width: 150px;
+        transform: scaleX(-1);
+    }
+
+
 }
 </style>
