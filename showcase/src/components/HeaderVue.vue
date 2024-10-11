@@ -174,6 +174,10 @@ export default {
     .header-container {
         display: none;
     }
+
+    .header-logo img {
+        padding-top: 0;
+    }
 }
 
 @media (min-width: 768px) {
