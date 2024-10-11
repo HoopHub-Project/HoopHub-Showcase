@@ -16,7 +16,7 @@
                 <div class="switch-language-text">{{ currentLanguage.toUpperCase() }}</div>
                 <div class="switch-language-button" @click="switchLanguage">
                     <img src="../assets/Header/world-map.png"
-                        :title="`${$t('switch_language')} (${currentLanguage.toUpperCase()})`">
+                        :title="`${$t('switch_language')} (${ currentLanguage === 'fr' ? 'EN' : 'FR'})`">
                 </div>
             </div>
             <button class="button-primary">{{ $t('login') }}</button>
@@ -173,6 +173,10 @@ export default {
 @media (max-width: 768px) {
     .header-container {
         display: none;
+    }
+
+    .header-logo img {
+        padding-top: 0;
     }
 }
 
