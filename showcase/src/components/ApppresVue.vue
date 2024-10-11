@@ -33,6 +33,7 @@
         </div>
         <div class="app-pres-image-container">
             <img src="../assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
+            <img src="../assets/CoachCarter/Coach_Carter_Management_sans_fond.png" alt="HoopHub CoachCarter" title="CoachCarter" />
         </div>
     </div>
 </template>
@@ -112,7 +113,8 @@ export default {
 
 .app-pres-image-container {
     display: flex;
-    justify-content: end;
+    justify-content:space-between;
+    align-items: center;
     margin-top: 50px;
 }
 

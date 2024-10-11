@@ -13,6 +13,10 @@
                 <button class="button-tertiary">{{ $t('discover') }}</button>
                 <button class="button-quaternary dowload_app_btn">{{ $t('download_app') }}</button>
             </div>
+
+        </div>
+        <div class="tagline-image-container">
+            <img src="../assets/CoachCarter/Coach_Carter_Playground_Sans_Fond_inverted.png" alt="HoopHub Logo" :title="$t('hoophub')" />
         </div>
     </div>
 </template>
@@ -106,6 +110,18 @@ export default {
 
 .button-tertiary:hover {
     background: transparent;
+}
+
+.tagline-image-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2rem;
+    width: 95vw;
+}
+
+.tagline-image-container img {
+    width: 200px;
+    transform: scaleX(-1);
 }
 
 @media (max-width: 768px) {
