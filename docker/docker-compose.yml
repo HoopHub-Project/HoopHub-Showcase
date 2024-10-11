@@ -7,7 +7,7 @@ services:
     env_file:
       - .env
     ports:
-      - 8080:8080
+      - 8081:8081
     networks:
       - traefik
     restart: unless-stopped
@@ -20,7 +20,7 @@ services:
       - "traefik.http.routers.showcase.tls=true"
       - "traefik.http.routers.showcase.tls.certresolver=letsencryptresolver"
       - "traefik.http.routers.showcase.service=showcase"
-      - "traefik.http.services.showcase.loadbalancer.server.port=8080"
+      - "traefik.http.services.showcase.loadbalancer.server.port=8081"
 
 networks:
   traefik:
