@@ -123,8 +123,53 @@ export default {
 }
 
 .learn_button {
-    width: 150px;
+    width: fit-content;
     background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    
+    .app-pres-container {
+        padding: 50px 20px 0px 20px;
+    }
+
+    .app-pres-title h1 {
+        font-size: 40px;
+        line-height: 54px;
+    }
+
+    .app-pres-title p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+    }
+
+    .app-pres-content-table {
+        flex-direction: column;
+    }
+
+    .app-pres-content-table-container {
+        width: 100%;
+    }
+
+    .app-pres-content-table-container h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .app-pres-content-table-container p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .app-pres-button-container {
+        align-items: center;
+    }
+
+    .app-pres-image-container img {
+        width: 110px;
+    }
+
 }
 
 
