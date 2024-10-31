@@ -1,6 +1,6 @@
 spring:
   application:
-    name: HoopHubShocaseApi
+    name: HoopHubShowcaseApi
 
   firebase:
     url: ${GOOGLE_ADMIN_CONFIG_DATABASE_URL}
