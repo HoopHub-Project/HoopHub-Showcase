@@ -1,12 +1,15 @@
 <template>
-    <div>
-TEST
-    </div>
+    <ApplicationTaglineVue />
 </template>
 
 <script>
+import ApplicationTaglineVue from '@/components/ApplicationTaglineVue.vue';
+
 export default {
   name: 'ApplicationVue',
+  components: {
+    ApplicationTaglineVue
+  }
 }
 </script>
 

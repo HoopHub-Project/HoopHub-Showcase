@@ -44,6 +44,7 @@ export default {
     align-items: center;
     gap: 24px;
     background-image: url(../assets/Home/background-image.png);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
