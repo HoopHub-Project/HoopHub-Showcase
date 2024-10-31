@@ -8,9 +8,19 @@ services:
       - .env
     ports:
       - 8081:8081
+    networks:
+      - traefik
     restart: unless-stopped
     stdin_open: true
     tty: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.showcase.rule=Host(`test.${DOMAIN}`)"
+      - "traefik.http.routers.showcase.entrypoints=websecure"
+      - "traefik.http.routers.showcase.tls=true"
+      - "traefik.http.routers.showcase.tls.certresolver=letsencryptresolver"
+      - "traefik.http.routers.showcase.service=showcase"
+      - "traefik.http.services.showcase.loadbalancer.server.port=8081"
   api:
     build:
       context: ../showcaseApi
@@ -28,3 +38,7 @@ services:
       - GOOGLE_ADMIN_CONFIG_CLIENT_ID=${GOOGLE_ADMIN_CONFIG_CLIENT_ID}
       - GOOGLE_ADMIN_CONFIG_TOKEN_URI=${GOOGLE_ADMIN_CONFIG_TOKEN_URI}
     restart: on-failure
+
+networks:
+  traefik:
+    external: true
