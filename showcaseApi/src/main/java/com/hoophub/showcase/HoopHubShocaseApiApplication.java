@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HoopHubShocaseApiApplication {
+public class HoopHubShowcaseApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HoopHubShocaseApiApplication.class, args);
+		SpringApplication.run(HoopHubShowcaseApiApplication.class, args);
 	}
 
 }
