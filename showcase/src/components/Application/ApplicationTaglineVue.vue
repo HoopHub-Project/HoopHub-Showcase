@@ -32,7 +32,7 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background-image: url(../assets/Application/ApplicationTagline.png);
+    background-image: url(@/assets/Application/ApplicationTagline.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

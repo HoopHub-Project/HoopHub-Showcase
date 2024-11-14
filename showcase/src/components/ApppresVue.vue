@@ -32,8 +32,8 @@
             <a href="/application">{{ $t('signup') }} ></a>
         </div>
         <div class="app-pres-image-container">
-            <img src="../assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
-            <img src="../assets/CoachCarter/Coach_Carter_Management_sans_fond.png" alt="HoopHub CoachCarter" title="CoachCarter" />
+            <img src="@/assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
+            <img src="@/assets/CoachCarter/Coach_Carter_Management_sans_fond.png" alt="HoopHub CoachCarter" title="CoachCarter" />
         </div>
     </div>
 </template>

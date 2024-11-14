@@ -1,14 +1,17 @@
 <template>
     <ApplicationTaglineVue />
+    <WhatIsHoopHubVue />
 </template>
 
 <script>
-import ApplicationTaglineVue from '@/components/ApplicationTaglineVue.vue';
+import ApplicationTaglineVue from '@/components/Application/ApplicationTaglineVue.vue';
+import WhatIsHoopHubVue from '@/components/Application/WhatIsHoopHubVue.vue';
 
 export default {
   name: 'ApplicationVue',
   components: {
-    ApplicationTaglineVue
+    ApplicationTaglineVue,
+    WhatIsHoopHubVue
   }
 }
 </script>
