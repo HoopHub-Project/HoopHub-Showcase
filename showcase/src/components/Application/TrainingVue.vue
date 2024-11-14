@@ -1,27 +1,28 @@
 <template>
     <div class="training-container">
-
         <div class="training-title">
-                <h1>{{ $t('training_hoophub') }}</h1>
-            </div>
-            <div class="training-content">
-                <p>{{ $t('training_hoophub_content') }}</p>
-            </div>
-            <div class="training-image-container">
-                <img src="@/assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
-            </div> 
+            <h1>{{ $t('training_hoophub') }}</h1>
+        </div>
+        <div class="training-content">
+            <p>{{ $t('training_hoophub_content') }}</p>
+        </div>
+        <div class="training-subtitle">
+            <h2>{{ $t('training_subtitle_1_hoophub') }}</h2>
+        </div>
+        <div class="training-content">
+            <p>{{ $t('training_hoophub_subcontent_1') }}</p>
+        </div>
     </div>
 </template>
 
 <script>
 
 export default {
-  name: 'TrainingVue'
+    name: 'TrainingVue'
 }
 </script>
 
 <style scoped>
-
 .training-container {
     display: flex;
     flex-direction: column;
@@ -47,19 +48,8 @@ export default {
     flex-direction: column;
 }
 
-.training-image-container {
-    display: flex;
-    justify-content:end;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.training-image-container img {
-    width: 200px;
-}
-
 @media (max-width: 768px) {
-    
+
     .training-container {
         padding: 50px 20px 0px 20px;
     }
@@ -73,10 +63,5 @@ export default {
         align-items: center;
     }
 
-    .training-image-container img {
-        width: 110px;
-    }
-
 }
-
 </style>
