@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="app-pres-button-container">
-            <button class="button-secondary learn_button">{{ $t('learn_more') }}</button>
+            <button class="button-secondary learn_button" @click="goToApplication()">{{ $t('learn_more') }}</button>
             <a href="/application">{{ $t('signup') }} ></a>
         </div>
         <div class="app-pres-image-container">
@@ -41,7 +41,12 @@
 <script>
 
 export default {
-    name: 'ApppresVue'
+    name: 'ApppresVue',
+    methods: {
+        goToApplication() {
+            this.$router.push({ path: '/application' });
+        },
+    }
 }
 
 </script>

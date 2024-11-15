@@ -26,14 +26,13 @@ export default {
 .training-container {
     display: flex;
     flex-direction: column;
-    padding: 50px 50px 0px 50px;
+    padding: 50px 50px 110px 50px;
     background-color: var(--hoophub-background);
 }
 
 .training-title {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .training-title h1 {
