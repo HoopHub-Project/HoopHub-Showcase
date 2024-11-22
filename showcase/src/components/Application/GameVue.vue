@@ -89,6 +89,16 @@ export default {
         line-height: 54px;
     }
 
+    .game-content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-content {
+        text-align: justify;
+    }
+
     .game-button-container {
         align-items: center;
     }

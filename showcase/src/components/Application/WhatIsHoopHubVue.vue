@@ -73,6 +73,10 @@ export default {
         align-items: center;
     }
 
+    .what-is-content {
+        text-align: justify;
+    }
+
     .what-is-image-container img {
         width: 110px;
     }

@@ -5,6 +5,7 @@
     <StatisticVue />
     <GameVue />
     <CommunityVue />
+    <FAQVue />
 </template>
 
 <script>
@@ -14,6 +15,7 @@ import TrainingVue from '@/components/Application/TrainingVue.vue';
 import StatisticVue from '@/components/Application/StatisticVue.vue';
 import GameVue from '@/components/Application/GameVue.vue';
 import CommunityVue from '@/components/Application/CommunityVue.vue';
+import FAQVue from '@/components/Application/FAQVue.vue';
 
 export default {
   name: 'ApplicationVue',
@@ -23,7 +25,8 @@ export default {
     TrainingVue,
     StatisticVue,
     GameVue,
-    CommunityVue
+    CommunityVue,
+    FAQVue
   }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
     <div class="community-container">
         <div>
-
             <div class="community-title">
                 <h1>{{ $t('community_hoophub') }}</h1>
             </div>
@@ -27,14 +26,14 @@
                 </div>
             </div>
         </div>
-        <div><img src="@/assets/Application/Community.png"></div>
+        <div class="community-img"><img src="@/assets/Application/Community.png"></div>
     </div>
 </template>
 
 <script>
 
 export default {
-    name: 'communityisticVue'
+    name: 'CommunityVue'
 }
 </script>
 
@@ -42,6 +41,7 @@ export default {
 .community-container {
     display: grid;
     grid-template-columns: 45% 45%;
+    align-items: center;
     gap: 10%;
     padding: 50px 50px 110px 50px;
     background-color: var(--hoophub-primary);
@@ -83,10 +83,22 @@ export default {
     font-size: 16px;
 }
 
+.community-img img {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
 
     .community-container {
+        display: flex;
+        flex-direction: column;
         padding: 50px 20px 0px 20px;
+    }
+
+    .community-content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .community-title h1 {
@@ -94,8 +106,22 @@ export default {
         line-height: 54px;
     }
 
+    .community-content {
+        text-align: justify;
+    }
+
     .community-button-container {
         align-items: center;
+    }
+
+    .community-img {
+        text-align: center;
+    }
+
+    .community-img img {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 70vw;
     }
 
 }

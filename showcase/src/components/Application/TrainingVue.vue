@@ -58,6 +58,10 @@ export default {
         line-height: 54px;
     }
 
+    .training-content {
+        text-align: justify;
+    }
+
     .training-button-container {
         align-items: center;
     }

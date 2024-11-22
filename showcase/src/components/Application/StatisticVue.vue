@@ -77,6 +77,10 @@ export default {
         line-height: 54px;
     }
 
+    .stat-content {
+        text-align: justify;
+    }
+
     .stat-button-container {
         align-items: center;
     }
