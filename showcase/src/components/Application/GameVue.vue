@@ -45,6 +45,7 @@ export default {
 .game-content-container {
     display: grid;
     grid-template-columns: 50% 50%;
+    gap: 10px;
 }
 
 .game-title {
