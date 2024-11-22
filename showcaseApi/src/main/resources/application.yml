@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: HoopHubShowcaseApi
+
+  firebase:
+    url: ${GOOGLE_ADMIN_CONFIG_DATABASE_URL}
+    type: ${GOOGLE_ADMIN_CONFIG_TYPE}
+    projectId: ${GOOGLE_ADMIN_CONFIG_PROJECT_ID}
+    privateKey: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY}
+    privateKeyId: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY_ID}
+    clientEmail: ${GOOGLE_ADMIN_CONFIG_CLIENT_EMAIL}
+    clientId: ${GOOGLE_ADMIN_CONFIG_CLIENT_ID}
+    tokenUri: ${GOOGLE_ADMIN_CONFIG_TOKEN_URI}
+
