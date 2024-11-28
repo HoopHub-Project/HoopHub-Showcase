@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="home-news-button-container">
-            <button class="button-secondary">{{ $t('view_all') }}</button>
+            <button class="button-secondary" v-on:click="goToNews">{{ $t('view_all') }}</button>
         </div>
     </div>
 </template>
@@ -35,7 +35,12 @@
 <script>
 
 export default {
-    name: 'HomeNews'
+    name: 'HomeNews',
+    methods: {
+        goToNews() {
+            this.$router.push({ path: '/news' });
+        },
+    }
 }
 
 </script>
