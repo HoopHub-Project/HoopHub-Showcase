@@ -3,6 +3,7 @@ import HomeVue from '@/vue/HomeVue.vue'
 import AssetsVue from '@/vue/AssetsVue.vue'
 import ApplicationVue from '@/vue/ApplicationVue.vue'
 import NewsVue from '@/vue/NewsVue.vue'
+import NewsDetailVue from '@/vue/NewsDetailVue.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/news',
     name: 'news',
     component: NewsVue
+  },
+  {
+    path: '/news/:newsName',  // Ajout du paramètre dynamique :newsName
+    name: 'news-detail',
+    component: NewsDetailVue
   }
 ]
 

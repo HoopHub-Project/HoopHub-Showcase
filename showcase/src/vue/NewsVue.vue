@@ -13,7 +13,7 @@
                 </div>
                 <h3>Les meilleurs conseils pour performer</h3>
                 <p>Découvrez les conseils et astuces les plus récents pour améliorer votre jeu.</p>
-                <a href="#">{{ $t('read_more')}} ></a>
+                <a href="/news/Les meilleurs conseils pour performer">{{ $t('read_more')}} ></a>
             </div>
             <div class="news-tuile">
                 <img src="../assets/News/Image - exemple 2.png" alt="Actualité 2" />
