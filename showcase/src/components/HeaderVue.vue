@@ -28,7 +28,8 @@
                                     :title="`${$t('switch_language')} (${ currentLanguage === 'fr' ? 'EN' : 'FR'})`">
                             </div>
                         </div>
-                        <button class="button-primary">{{ $t('login') }}</button>
+                        <button @click="openModal()" class="button-primary">{{ $t('login') }}</button>
+                        <LoginModalVue v-if="isModalVisible" @close="closeModal()" />
                     </div>
                 </div>
 
@@ -56,17 +57,20 @@
                                         :title="`${$t('switch_language')} (${currentLanguage.toUpperCase()})`">
                                 </div>
                             </div>
-                            <button class="button-primary">{{ $t('login') }}</button>
+                            <button @click="openModal()" class="button-primary">{{ $t('login') }}</button>
+                            <LoginModalVue v-if="isModalVisible" @close="closeModal()" />
                         </div>
                     </div>
                 </div>
             </div>
-        </transition>
+        </transition> 
     </div>
 </template>
 
 
 <script>
+import LoginModalVue from './LoginModalVue.vue';
+
 export default {
     name: 'HeaderVue',
     data() {
@@ -74,8 +78,10 @@ export default {
             currentLanguage: this.$i18n.locale, // Current language
             isMenuOpen: false, // Track whether the mobile menu is open
             isLoading: true, // Track loading state
+            isModalVisible: false,
         };
     },
+    components: { LoginModalVue },
     methods: {
         switchLanguage() {
             this.currentLanguage = this.currentLanguage === 'fr' ? 'en' : 'fr';
@@ -83,6 +89,12 @@ export default {
         },
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen;
+        },
+        openModal() {
+            this.isModalVisible = true; // Afficher la modale
+        },
+        closeModal() {
+            this.isModalVisible = false; // Fermer la modale
         },
     },
     mounted() {

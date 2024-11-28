@@ -28,12 +28,12 @@
             </div>
         </div>
         <div class="app-pres-button-container">
-            <button class="button-secondary learn_button">{{ $t('learn_more') }}</button>
+            <button class="button-secondary learn_button" v-on:click="goToApplication">{{ $t('learn_more') }}</button>
             <a href="/application">{{ $t('signup') }} ></a>
         </div>
         <div class="app-pres-image-container">
-            <img src="../assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
-            <img src="../assets/CoachCarter/Coach_Carter_Management_sans_fond.png" alt="HoopHub CoachCarter" title="CoachCarter" />
+            <img src="@/assets/Logos/logo_HoopHub.png" alt="HoopHub Logo" :title="$t('hoophub')" />
+            <img src="@/assets/CoachCarter/Coach_Carter_Management_sans_fond.png" alt="HoopHub CoachCarter" title="CoachCarter" />
         </div>
     </div>
 </template>
@@ -41,7 +41,12 @@
 <script>
 
 export default {
-    name: 'ApppresVue'
+    name: 'ApppresVue',
+    methods: {
+        goToApplication() {
+            this.$router.push({ path: '/application' });
+        },
+    }
 }
 
 </script>
