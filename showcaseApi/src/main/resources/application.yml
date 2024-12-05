@@ -1,14 +1,27 @@
 spring:
   application:
     name: HoopHubShowcaseApi
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:5432/${POSTGRES_DB}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
-  firebase:
-    url: ${GOOGLE_ADMIN_CONFIG_DATABASE_URL}
-    type: ${GOOGLE_ADMIN_CONFIG_TYPE}
-    projectId: ${GOOGLE_ADMIN_CONFIG_PROJECT_ID}
-    privateKey: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY}
-    privateKeyId: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY_ID}
-    clientEmail: ${GOOGLE_ADMIN_CONFIG_CLIENT_EMAIL}
-    clientId: ${GOOGLE_ADMIN_CONFIG_CLIENT_ID}
-    tokenUri: ${GOOGLE_ADMIN_CONFIG_TOKEN_URI}
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
+
+firebase:
+  url: ${GOOGLE_ADMIN_CONFIG_DATABASE_URL}
+  type: ${GOOGLE_ADMIN_CONFIG_TYPE}
+  project_id: ${GOOGLE_ADMIN_CONFIG_PROJECT_ID}
+  private_key: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY}
+  private_key_id: ${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY_ID}
+  client_email: ${GOOGLE_ADMIN_CONFIG_CLIENT_EMAIL}
+  client_id: ${GOOGLE_ADMIN_CONFIG_CLIENT_ID}
+  tokenUri: ${GOOGLE_ADMIN_CONFIG_TOKEN_URI}

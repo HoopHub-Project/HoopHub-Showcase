@@ -6,6 +6,7 @@ import com.hoophub.showcase.article.exception.ArticleException;
 import com.hoophub.showcase.article.util.ArticleMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,6 @@ import java.util.*;
 public class ArticleServiceImpl implements ArticleService{
 
     private final ArticleRepository articleRepository;
-
-    private final ArticleMapper articleMapper;
 
     @Override
     public Article createArticle(ArticleForm articleForm) throws ArticleException {
@@ -46,7 +45,7 @@ public class ArticleServiceImpl implements ArticleService{
             return new ArrayList<>();
         }
         else {
-            return this.articleMapper.toDtoList(this.articleRepository.findAll());
+            return ArticleMapper.INSTANCE.toDtoList(this.articleRepository.findAll());
         }
     }
 
@@ -57,7 +56,7 @@ public class ArticleServiceImpl implements ArticleService{
             log.error("An error occured because the article is not found");
             throw new ArticleException("Article is not found", HttpStatus.NOT_FOUND);
         }
-        return this.articleMapper.toDto(optionalArticle.get());
+        return ArticleMapper.INSTANCE.toDto(optionalArticle.get());
     }
 
     @Override
