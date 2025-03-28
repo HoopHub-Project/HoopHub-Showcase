@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  showcase:
+    build: ../showcase
+    container_name: showcase
+    env_file:
+      - .env
+    ports:
+      - 8081:8081
+    networks:
+      - traefik
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.showcase.rule=Host(`test.${DOMAIN}`)"
+      - "traefik.http.routers.showcase.entrypoints=websecure"
+      - "traefik.http.routers.showcase.tls=true"
+      - "traefik.http.routers.showcase.tls.certresolver=letsencryptresolver"
+      - "traefik.http.routers.showcase.service=showcase"
+      - "traefik.http.services.showcase.loadbalancer.server.port=8081"
+  api:
+    build:
+      context: ../showcaseApi
+    env_file:
+      - .env
+    ports:
+      - ${API_PORT}:${API_PORT}
+    environment:
+      - GOOGLE_ADMIN_CONFIG_DATABASE_URL=${GOOGLE_ADMIN_CONFIG_DATABASE_URL}
+      - GOOGLE_ADMIN_CONFIG_TYPE=${GOOGLE_ADMIN_CONFIG_TYPE}
+      - GOOGLE_ADMIN_CONFIG_PROJECT_ID=${GOOGLE_ADMIN_CONFIG_PROJECT_ID}
+      - GOOGLE_ADMIN_CONFIG_PRIVATE_KEY=${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY}
+      - GOOGLE_ADMIN_CONFIG_PRIVATE_KEY_ID=${GOOGLE_ADMIN_CONFIG_PRIVATE_KEY_ID}
+      - GOOGLE_ADMIN_CONFIG_CLIENT_EMAIL=${GOOGLE_ADMIN_CONFIG_CLIENT_EMAIL}
+      - GOOGLE_ADMIN_CONFIG_CLIENT_ID=${GOOGLE_ADMIN_CONFIG_CLIENT_ID}
+      - GOOGLE_ADMIN_CONFIG_TOKEN_URI=${GOOGLE_ADMIN_CONFIG_TOKEN_URI}
+    restart: on-failure
+
+networks:
+  traefik:
+    external: true
