@@ -3,9 +3,10 @@
         <div class="footer-links-containers">
             <img class="logo" src="../assets/Logos/logo_HoopHub.png" title="HoopHub Logo" />
             <div class="footer-links">
-                <a href="/">{{ $t('suggestions') }}</a>
-                <a href="/application">{{ $t('contact_us') }}</a>
-                <a href="/services">{{ $t('join_us') }}</a>
+                <!-- Lorsqu'on clique, on affiche la modale avec le bon titre -->
+                <a href="#" @click.prevent="openModal($t('suggestions'))">{{ $t('suggestions') }}</a>
+                <a href="#" @click.prevent="openModal($t('contact_us'))">{{ $t('contact_us') }}</a>
+                <a href="#" @click.prevent="openModal($t('join_us'))">{{ $t('join_us') }}</a>
             </div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/hoophub" target="_blank">
@@ -32,14 +33,15 @@
             <a href="/terms_of_use">{{ $t('terms_of_use') }}</a>
             <a href="/cookie_settings">{{ $t('cookie_settings') }}</a>
         </div>
+        <ModalVue v-if="isModalVisible" :title="modalTitle" @close="closeModal" />
     </div>
     <div class="footer-mobile-container">
         <div class="footer-mobile-links-containers">
             <img class="logo" src="../assets/Logos/logo_HoopHub.png" title="HoopHub Logo" />
             <div class="footer-mobile-links">
-                <a href="/">{{ $t('suggestions') }}</a>
-                <a href="/application">{{ $t('contact_us') }}</a>
-                <a href="/services">{{ $t('join_us') }}</a>
+                <a @click.prevent="openModal($t('suggestions'))">{{ $t('suggestions') }}</a>
+                <a @click.prevent="openModal($t('contact_us'))">{{ $t('contact_us') }}</a>
+                <a @click.prevent="openModal($t('join_us'))">{{ $t('join_us') }}</a>
             </div>
             <div class="footer-mobile-social">
                 <a href="https://www.facebook.com/hoophub" target="_blank">
@@ -66,13 +68,34 @@
             <a href="/cookie_settings">{{ $t('cookie_settings') }}</a>
             <div style="margin-top: 1.5rem; text-align: center;">@2024 Epitech {{ $t('all_rights_reserved') }}</div>
         </div>
+        <ModalVue v-if="isModalVisible" :title="modalTitle" @close="closeModal" />
     </div>
 </template>
 
 <script>
+import ModalVue from './ModalVue.vue'; // Importer le composant ModalVue
+
 export default {
     name: 'FooterVue',
-}
+    components: {
+        ModalVue, // Déclarer le composant
+    },
+    data() {
+        return {
+            isModalVisible: false, // Contrôle la visibilité de la modale
+            modalTitle: '', // Titre de la modale
+        };
+    },
+    methods: {
+        openModal(title) {
+            this.modalTitle = title; // Définir le titre de la modale
+            this.isModalVisible = true; // Afficher la modale
+        },
+        closeModal() {
+            this.isModalVisible = false; // Fermer la modale
+        },
+    },
+};
 </script>
 
 <style scoped>

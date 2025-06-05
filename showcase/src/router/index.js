@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeVue from '@/vue/HomeVue.vue'
 import AssetsVue from '@/vue/AssetsVue.vue'
+import ApplicationVue from '@/vue/ApplicationVue.vue'
+import NewsVue from '@/vue/NewsVue.vue'
 
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
     name: 'AssetsComponent',
     component: AssetsVue
   },
+  {
+    path: '/application',
+    name: 'application',
+    component: ApplicationVue
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: NewsVue
+  }
 ]
 
 const router = createRouter({

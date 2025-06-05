@@ -10,7 +10,7 @@
 
             <!-- Boutons (sans transition spéciale) -->
             <div class="tagline-buttons">
-                <button class="button-tertiary">{{ $t('discover') }}</button>
+                <button class="button-tertiary" v-on:click="goToApplication">{{ $t('discover') }}</button>
                 <button class="button-quaternary dowload_app_btn">{{ $t('download_app') }}</button>
             </div>
 
@@ -25,6 +25,11 @@
 <script>
 export default {
     name: 'TaglineVue',
+    methods: {
+        goToApplication() {
+            this.$router.push({ path: `/application`})
+        },
+    },
     mounted() {
         // Ajoute la classe "visible" pour démarrer la transition après le montage du composant
         setTimeout(() => {
@@ -43,7 +48,8 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background-image: url(../assets/Home/background-image.png);
+    background-image: url(@/assets/Home/background-image.png);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
